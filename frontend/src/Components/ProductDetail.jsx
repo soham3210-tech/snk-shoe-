@@ -13,6 +13,7 @@ const ProductDetail = ({ productId, onClose }) => {
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [showAddReview, setShowAddReview] = useState(false);
   const [reviews, setReviews] = useState([]);
 
@@ -29,18 +30,20 @@ const ProductDetail = ({ productId, onClose }) => {
   };
 
   useEffect(() => {
+    setLoading(true);
     axios
-      .get(
-        `https://ecommerce-backend-0wr7.onrender.com/ecommerce/product/products/${productId}`
-      )
+      .get(`/ecommerce/product/products/${productId}`)
       .then((response) => {
         const productData = response.data;
         productData.quantity = 1;
         setProduct(productData);
         setReviews(productData.reviews);
+        setLoading(false);
       })
-      .catch((error) => {
-        console.error("Error fetching product details:", error);
+      .catch((err) => {
+        console.error("Error fetching product details:", err);
+        setError("Failed to load product details. Please try again.");
+        setLoading(false);
       });
   }, [productId]);
 
@@ -54,7 +57,7 @@ const ProductDetail = ({ productId, onClose }) => {
       const userId = userData._id;
       axios
         .post(
-          `https://ecommerce-backend-0wr7.onrender.com/ecommerce/product/addProductToCart/${userId}`,
+          `/ecommerce/product/addProductToCart/${userId}`,
           { productId: product._id }
         )
         .then(() => {
@@ -81,7 +84,9 @@ const ProductDetail = ({ productId, onClose }) => {
       <div className="product-detail-container">
         {error ? <ErrorComponent message={error} onClose={clearError} /> : null}
 
-        {product ? (
+        {loading ? (
+          <p>Loading product details...</p>
+        ) : product ? (
           <>
             <div className="product-detail-left">
               <img
@@ -151,7 +156,7 @@ const ProductDetail = ({ productId, onClose }) => {
             </div>
           </>
         ) : (
-          <p>Loading product details...</p>
+          <p>Product not found or failed to load.</p>
         )}
       </div>
     </div>
