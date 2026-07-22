@@ -19,11 +19,7 @@ app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://snk-shoe-backend.onrender.com/",
-      "https://snk-shoe.onrender.com/",
-    ],
+    origin: ["http://localhost:5173", "https://snk-shoe.onrender.com"],
     credentials: true,
   }),
 );
