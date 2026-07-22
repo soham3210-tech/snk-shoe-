@@ -19,10 +19,10 @@ const HomeSecond = () => {
                             swipeable
                         >
                             <div>
-                                <img src="/poster4.jpg" alt="Poster 1" />
+                                <img src="/banner1.png" alt="Poster 1" />
                             </div>
                             <div>
-                                <img src="/poster3.jpg" alt="Poster 2" />
+                                <img src="/banner2.png" alt="Poster 2" />
                             </div>
                         </Carousel>
                     </div>
