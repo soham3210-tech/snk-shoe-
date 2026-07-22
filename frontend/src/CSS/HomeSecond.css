@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-1: #2563eb;
+  --color-2: #1d4ed8;
+  --color-3: #7c3aed;
+  --color-4: #f8fafc;
+  --color-5: #ffffff;
+  --color-6: #0f172a;
+  --font-rubik: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-screen {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.05));
+  padding: 1rem 0 3rem;
+}
+
+.homeSecond-container {
+  width: min(1100px, 92%);
+  min-height: 40vh;
+  position: relative;
+  padding: 2rem 1rem 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.main-heading {
+  font-family: var(--font-rubik);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--color-6);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.decorative-slider {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 1));
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.decorative-slider img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+@media (max-width: 900px) {
+  .homeSecond-container {
+    width: 100%;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+  }
+}
