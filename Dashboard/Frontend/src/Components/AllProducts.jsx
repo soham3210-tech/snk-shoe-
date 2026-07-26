@@ -14,7 +14,7 @@ const AllProducts = () => {
 
   const fetchProducts = () => {
     // get re products
-   axios.get('https://snk-shoe-backend.onrender.com/ecommerce/product')
+    axios.get("https://snk-shoe-backend.onrender.com/ecommerce/product")
       .then((response) => {
         setProducts(response.data);
       })
@@ -29,9 +29,9 @@ const AllProducts = () => {
       return;
     }
     // delete re product by id
-  axios.delete(`https://snk-shoe-backend.onrender.com/ecommerce/product/products/${productId}`)
+    axios.delete(`https://snk-shoe-backend.onrender.com/ecommerce/product/products/${productId}`)
       .then(() => {
-        fetchProducts(); 
+        fetchProducts();
       })
       .catch((error) => {
         console.error('Error deleting product:', error);
@@ -51,10 +51,10 @@ const AllProducts = () => {
   const handleUpdateSubmit = (event) => {
     event.preventDefault();
     // update re product by id
-axios.put(`https://snk-shoe-backend.onrender.com/ecommerce/product/products/${updateProduct._id}`, updateProduct)      .then(() => {
-        fetchProducts(); 
-        closeUpdateForm(); 
-      })
+    axios.put(`https://snk-shoe-backend.onrender.com/ecommerce/product/products/${updateProduct._id}`, updateProduct).then(() => {
+      fetchProducts();
+      closeUpdateForm();
+    })
       .catch((error) => {
         console.error('Error updating product:', error);
       });
@@ -169,7 +169,7 @@ axios.put(`https://snk-shoe-backend.onrender.com/ecommerce/product/products/${up
                 value={updateProduct.status || ''}
                 onChange={(e) => setUpdateProduct({ ...updateProduct, status: e.target.value })}
               />
-              
+
               <button type="submit">Update</button>
               <button type="button" onClick={closeUpdateForm}>Cancel</button>
             </form>
