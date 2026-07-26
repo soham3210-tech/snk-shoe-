@@ -14,7 +14,7 @@ const AddReview = ({ productId, onClose }) => {
 
     axios
       .post(
-        `/ecommerce/product/products/${productId}/reviews/${userId}`,
+        `https://snk-shoe-backend.onrender.com/ecommerce/product/products/${productId}/reviews/${userId}`,
         { reviewText },
         {
           headers: {

@@ -30,7 +30,7 @@ const Cart = () => {
             return;
         }
 
-        const apiUrl = `/ecommerce/product/shopping-cart/${userId}`;
+        const apiUrl = `https://snk-shoe-backend.onrender.com/ecommerce/product/shopping-cart/${userId}`;
 
         axios
             .get(apiUrl)
@@ -63,7 +63,7 @@ const Cart = () => {
             return;
         }
 
-        const apiUrl = `/ecommerce/product/shopping-cart/${userId}/${itemId}`;
+        const apiUrl = `https://snk-shoe-backend.onrender.com/ecommerce/product/shopping-cart/${userId}/${itemId}`;
 
         axios
             .delete(apiUrl)

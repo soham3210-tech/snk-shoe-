@@ -47,7 +47,7 @@ const ConformOrder = () => {
       return;
     }
 
-    const apiUrl = `/ecommerce/product/shopping-cart/${userId}`;
+    const apiUrl = `https://snk-shoe-backend.onrender.com/ecommerce/product/shopping-cart/${userId}`;
 
     axios
       .get(apiUrl)

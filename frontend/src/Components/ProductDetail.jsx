@@ -57,7 +57,7 @@ const ProductDetail = ({ productId, onClose }) => {
       const userId = userData._id;
       axios
         .post(
-          `/ecommerce/product/addProductToCart/${userId}`,
+          `https://snk-shoe-backend.onrender.com/ecommerce/product/addProductToCart/${userId}`,
           { productId: product._id }
         )
         .then(() => {

@@ -21,7 +21,7 @@ const Product = () => {
 
     useEffect(() => {
         axios
-            .get("/ecommerce/product")
+            .get("https://snk-shoe-backend.onrender.com/ecommerce/product")
             .then((response) => {
                 setProducts(response.data);
                 const uniqueCategories = Array.from(
