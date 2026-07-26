@@ -10,7 +10,7 @@ const VisitCount = () => {
     const fetchVisitCount = async () => {
       try { 
         // The URL should be updated to match the backend route for fetching the visit count
-        const response = await axios.get('/visitcount');
+        const response = await axios.get("https://snk-shoe-backend.onrender.com/visitcount");
         setCount(response.data.count);
       } catch (error) {
         console.error('Error fetching visit count:', error);

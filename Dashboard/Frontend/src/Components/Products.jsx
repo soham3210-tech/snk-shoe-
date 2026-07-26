@@ -33,7 +33,7 @@ const Products = () => {
 
     try {
       const response = await axios.post(
-        "https://ecommerce-backend-0wr7.onrender.com/ecommerce/product/products",
+        "https://snk-shoe-backend.onrender.com/ecommerce/product/products",
         formData
       );
 
