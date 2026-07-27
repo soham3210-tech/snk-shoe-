@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 
 const Cursor = () => {
-  const ringRef = useRef(null);
   const dotRef = useRef(null);
   const trailRef = useRef(null);
   const frameRef = useRef(0);
@@ -18,11 +17,10 @@ const Cursor = () => {
   });
 
   useEffect(() => {
-    const ring = ringRef.current;
     const dot = dotRef.current;
     const trail = trailRef.current;
 
-    if (!ring || !dot || !trail) {
+    if (!dot || !trail) {
       return undefined;
     }
 
@@ -81,9 +79,7 @@ const Cursor = () => {
       pointer.x += (pointer.targetX - pointer.x) * 0.18;
       pointer.y += (pointer.targetY - pointer.y) * 0.18;
 
-      ring.style.transform = `translate(${pointer.x}px, ${pointer.y}px) translate(-50%, -50%)`;
       dot.style.transform = `translate(${pointer.x}px, ${pointer.y}px) translate(-50%, -50%)`;
-      ring.style.opacity = pointer.visible ? (pointer.moving ? "1" : "0.8") : "0";
       dot.style.opacity = pointer.visible ? (pointer.moving ? "1" : "0.95") : "0";
       trail.style.opacity = pointer.visible && pointer.moving ? "1" : "0";
 
@@ -128,7 +124,6 @@ const Cursor = () => {
   return (
     <>
       <div className="cursor-trail" ref={trailRef} aria-hidden="true" />
-      <div className="cursor-ring" ref={ringRef} aria-hidden="true" />
       <div className="cursor-dot" ref={dotRef} aria-hidden="true" />
     </>
   );
