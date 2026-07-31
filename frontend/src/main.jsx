@@ -15,6 +15,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </CartProvider>
   </React.StrictMode>
 );
+/*
+import React, ReactDOM, App, BrowserRouter, CartProvider, FeedbackButton
+ReactDOM.createRoot(document.getElementById("root")).render(
+React.StrictMode
+    BrowserRouter
+       CartProvider
+         App
+         FeedbackButton
+
+
+)
+
+
+
+*/
 /* *{
   color: rgb(200, 180, 219);
   color: rgb(250, 200, 221);

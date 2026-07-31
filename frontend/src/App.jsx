@@ -43,7 +43,36 @@ function App() {
       <ScrollToTop />
       <Toaster position="top-left" reverseOrder={false} />
     </>
-  )
+  )   
 }
 
 export default App
+/*
+import Routes ,Route
+import Navbar, Footer, ScrollToTop, Cursor
+import Home, About, Product, Contact, Cart, Profile, UserProfile
+import PlaceOrder, ConformOrder, Success, PageNotFound, Faq, FeedbackModal
+import Toaster
+
+function App() 
+return 
+cursor
+Routes 
+  Route home
+  Route about
+  Route product
+  Route contact
+  Route cart
+  Route profile
+  Route user
+  Route address-payment-placeOrder
+  Route address-payment-placeOrder/confirmOrder
+  Route success
+  Route faq
+  Route feedback
+  Route pagenotfound
+
+  footer
+  scrollToTop
+  toaster
+*/

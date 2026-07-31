@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav>
-        <div className={`main-component ${menuOpen ? "menu-open show" : ""}`}>
+        <div className={`main-component ${menuOpen ? "menu-open" : ""}`}>
           <div className="head-main" onClick={goHome}>
             {/* my image of logo is in components folder */}
             <img src={logo4} alt="logo" className="logo" />
@@ -127,3 +127,33 @@ const Navbar = () => {
 
 export default Navbar;
 
+/**
+import usestate,NavLinks and useNavigate
+import css
+import icons
+import logo
+import React ,{useContext}
+import usecart
+
+
+navbar function
+usestate for menuOpen
+useCart for cart
+toggleMenu function ie setMenuOpen
+ navigate = useNavigate()
+goHome function ie navigate('/')
+
+
+
+
+return 
+fragment
+   nav
+     div main-component
+        div head-main onClick goHome
+          img logo
+        div routes
+          ul navbar_list
+        hamburger button div onClick toggleMenu
+
+ */
