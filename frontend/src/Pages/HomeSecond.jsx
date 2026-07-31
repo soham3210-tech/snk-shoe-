@@ -33,3 +33,23 @@ const HomeSecond = () => {
 };
 
 export default HomeSecond;
+/*
+import Fragment, Carousel, HomeSecond.css
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+ 
+function HomeSecond
+       return
+            fragment
+               div main-screen
+                    div homeSecond-container
+                        h1 main-heading Offers
+                        div decorative-slider
+                            Carousel
+                                div.img
+                                div.img
+
+
+
+
+
+*/

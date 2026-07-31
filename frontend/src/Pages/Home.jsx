@@ -55,3 +55,21 @@ const Home = () => {
 };
 
 export default Home;
+
+/*
+import Fragment, useNavigate, Tilt, Home.css, product, HomeSecond, Testimonials
+homefunction
+  navigate =useNavigate
+return 
+    Fragment
+        div.home-container
+            div.top
+                div.top-left
+                   content
+            Tilt
+                div.top-right
+        HomeSecond
+        Product
+        Testimonials
+
+*/
