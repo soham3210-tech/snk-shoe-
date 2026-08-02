@@ -13,7 +13,15 @@ export const getMyUsers = async (req, res, next) => {
 
   return res.status(200).json({ users });
 };
+/*
+export const getMyUsers = async (req, res, next) => {}
+  try
+    let users
+    users = await User.find()
+   catch  user not found add user
+  response with users
 
+*/
 const jwtSecret = process.env.JWT_SECRET || "development-secret";
 
 export const signup = async (req, res, next) => {
@@ -39,6 +47,60 @@ export const signup = async (req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+/*
+signup function  {export const signup = async (req, res, next) => {}}
+ try 
+    name email password profileImg from req.body
+
+    check if user already exists with the same email
+           if exists return 400 with message "Email already exists."
+    hash the password using bcrypt
+
+    create a new user with name, email, hashed password, and profileImg
+
+    save the user to the database
+
+    generate a JWT token with user's _id
+
+    return 201 with token and user data
+ catch 
+    if error is duplicate key error for email return 400 with message "Email already exists."
+    else return 500 with message "Internal server error"
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const login = async (req, res, next) => {
   try {
@@ -75,6 +137,48 @@ export const login = async (req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+/*
+  login function.  { export const login =async(req,res,nex)=>{}}
+    try
+       name email from req.body
+
+       find the user by email
+
+       if user not found return 404 with message "User does not exists"
+
+       compare the provided password with the stored hashed password using bcrypt
+
+       if passwords do not match return 400 with message "Passwords do not match"
+
+       generate a JWT token with user's _id
+
+       return 201 with token and user data (name, email, profileImg, _id)
+    catch
+       return 500 with message "Internal server error"
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const updateProfileImage = async (req, res, next) => {
   try {
@@ -97,6 +201,36 @@ export const updateProfileImage = async (req, res, next) => {
   }
 };
 
+/*
+  updateProfileImage function.  { export const updateProfileImage = async (req, res, next) => {}}
+    try
+       email profileImg from req.body
+
+       find the user by email and update the profileImg
+
+       if user not found return 404 with message "User not found."
+
+       response 200 with message "Profile image updated successfully." and updated user data
+    catch
+       return 500 with message "Internal server error" 
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const resetPassword = async (req, res, next) => {
   const { email, newPassword } = req.body;
 
@@ -116,3 +250,23 @@ export const resetPassword = async (req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+/*
+  resetPassword function.  { export const resetPassword = async (req, res, next) => {}}
+    try
+       email newPassword from req.body
+
+       find the user by email
+
+       if user not found return 404 with message "User not found."
+
+       hash the new password using bcrypt and update the user's password
+
+       save the updated user
+
+       response 200 with message "Password updated successfully."
+    catch
+       return 500 with message "Internal server error"
+
+
+
+*/

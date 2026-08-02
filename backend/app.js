@@ -2,11 +2,11 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-import router from "./Routes/user-routes.js";
-import routers from "./Routes/product-routes.js";
-import routerss from "./Routes/dashboard-routes.js";
-import routersss from "./Routes/dashboardagent-routes.js";
-import routerAddress from "./Routes/user-address-routes.js";
+import userroutes from "./Routes/user-routes.js";
+import productroutes from "./Routes/product-routes.js";
+import dashboardroutes from "./Routes/dashboard-routes.js";
+import dashboardagentroutes from "./Routes/dashboardagent-routes.js";
+import useraddressroutes from "./Routes/user-address-routes.js";
 import visitCountRoutes from "./Routes/visit-count-routes.js";
 
 const app = express();
@@ -30,11 +30,11 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
-app.use("/ecommerce/user", router);
-app.use("/ecommerce/product", routers);
-app.use("/ecommerce/manager", routerss);
-app.use("/ecommerce/agent", routersss);
-app.use("/ecommerce/user-address", routerAddress);
+app.use("/ecommerce/user", userroutes);
+app.use("/ecommerce/product", productroutes);
+app.use("/ecommerce/manager", dashboardroutes);
+app.use("/ecommerce/agent", dashboardagentroutes);
+app.use("/ecommerce/user-address", useraddressroutes);
 app.use("/visitcount", visitCountRoutes);
 
 export default app;

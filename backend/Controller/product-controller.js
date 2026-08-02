@@ -9,7 +9,19 @@ export const getAllProducts = async (req, res, next) => {
     res.status(500).json({ error: "Unable to retrieve products" });
   }
 };
+/*
+getAllProducts function.  { export const getAllProducts = async (req, res, next) => {}}
+    try
+       find all products from Product model
 
+       response with products
+    catch
+       return 500 with message "Unable to retrieve products"
+
+
+
+
+*/
 export const getProductById = async (req, res, next) => {
   try {
     const productId = req.params.productId;
@@ -24,6 +36,39 @@ export const getProductById = async (req, res, next) => {
     res.status(500).json({ error: "Unable to retrieve product by ID" });
   }
 };
+/*
+ getProductById function.  { export const getProductById = async (req, res, next) => {}}
+    try
+       get productId from request params
+       find product by id from Product model
+
+       if product not found
+          return 404 with message "Product not found"
+
+       response with product
+    catch
+       return 500 with message "Unable to retrieve product by ID"
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const addProduct = async (req, res, next) => {
   try {
@@ -34,6 +79,37 @@ export const addProduct = async (req, res, next) => {
     res.status(500).json({ error: "Unable to add product" });
   }
 };
+
+/*
+export const addProduct = async (req, res, next) => {}
+    try
+       create new product from request body
+
+       save product to database
+
+       response with saved product and status 201
+    catch
+       return 500 with message "Unable to add product"
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const updateProduct = async (req, res, next) => {
   try {
@@ -51,6 +127,40 @@ export const updateProduct = async (req, res, next) => {
   }
 };
 
+/*
+export const updateProduct = async (req, res, next) => {}
+    try
+       find product by id and update with request body
+
+       if product not found
+          return 404 with message "Product not found"
+
+       response with updated product
+    catch
+       return 500 with message "Unable to update product"
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const deleteProduct = async (req, res, next) => {
   try {
     const deletedProduct = await Product.findByIdAndRemove(
@@ -64,6 +174,30 @@ export const deleteProduct = async (req, res, next) => {
     res.status(500).json({ error: "Unable to delete product" });
   }
 };
+/*
+export const deleteProduct = async (req, res, next) => {}
+ try
+    find product by id and remove from database
+
+    if product not found
+       return 404 with message "Product not found"
+
+    response with message "Product deleted"
+ catch
+    return 500 with message "Unable to delete product" 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  */
 
 export const addProductToCart = async (req, res, next) => {
   try {
@@ -88,6 +222,42 @@ export const addProductToCart = async (req, res, next) => {
     res.status(500).json({ error: "Unable to add product to cart" });
   }
 };
+/*
+export const addProductToCart = async (req, res, next) => {}
+    try
+       get userId from request params
+       get productId from request body
+
+       find user by id from User model
+
+       if user not found
+          return 404 with message "User not found"
+
+       create cartItem object with productId
+
+       push cartItem to user's shoppingCart array
+
+       save user to database
+
+       response with message "Product added to cart" and status 201
+    catch
+       return 500 with message "Unable to add product to cart"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 export const getProductFromCart = async (req, res) => {
@@ -110,6 +280,41 @@ export const getProductFromCart = async (req, res) => {
     res.status(500).json({ error: "Unable to retrieve shopping cart" });
   }
 };
+/*
+export const getProductFromCart = async (req, res) => {}
+    try
+       get userId from request params
+
+       find user by id from User model and populate shoppingCart.product
+
+       if user not found
+          return 404 with message "User not found"
+
+       response with user's shoppingCart
+    catch
+       return 500 with message "Unable to retrieve shopping cart"
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 export const deleteProductFromCart = async (req, res) => {
   try {
@@ -140,6 +345,61 @@ export const deleteProductFromCart = async (req, res) => {
   }
 };
 
+/*
+export const deleteProductFromCart = async (req, res) => {}
+    try
+       get userId from request params
+       get productId from request params
+
+       find user by id from User model
+
+       if user not found
+          return 404 with message "User not found"
+
+       find index of cart item with specified productId in user's shoppingCart
+
+       if itemIndex is -1
+          return 404 with message "Product not found in the cart"
+
+       remove item from shoppingCart array using splice
+
+       save user to database
+
+       response with message "Product removed from cart"
+    catch
+       return 500 with message "Unable to remove product from cart" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // for adding review to my product spectastyle
 
 export const addReviewToProduct = async (req, res, next) => {
@@ -167,3 +427,31 @@ export const addReviewToProduct = async (req, res, next) => {
   }
 };
 
+/*
+export const addReviewToProduct = async (req, res, next) => {}
+    try
+       get userId from request params
+       get reviewText from request body
+       get productId from request params
+
+       find product by id from Product model
+
+       if product not found
+          return 404 with message "Product not found"
+
+       push new review object with userId and reviewText to product.reviews array
+
+       save product to database
+
+       response with message "Review added successfully" and status 201
+    catch
+       return 500 with message "Unable to add review to product"
+
+
+
+
+
+
+
+
+*/
