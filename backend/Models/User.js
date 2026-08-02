@@ -36,3 +36,20 @@ const userSchema = new Schema({
 });
 
 export default mongoose.model("ecommerceUser", userSchema);
+/*
+mongoose from "mongoose";
+
+schema = mongoose.Schema;
+
+
+cartItemSchema = new schema({product})
+
+userSchema = new schema({
+name,
+email,
+password,
+profileImg,
+shoppingCart,
+addresses})
+
+*/

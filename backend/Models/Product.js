@@ -43,3 +43,22 @@ const productSchema = new Schema({
 });
 
 export default mongoose.model('Product', productSchema);
+
+/*
+import mongoose from "mongoose";
+
+schema = mongoose.Schema;
+
+productSchema = new schema({productName,
+productPrice,
+publishDate,
+category,
+productDescription,
+productImage,
+status,
+views,
+reviews})
+
+export default mongoose.model('Product', productSchema);
+
+*/

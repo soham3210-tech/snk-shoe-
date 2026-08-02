@@ -8,3 +8,12 @@ const visitCountSchema = new mongoose.Schema({
 });
 
 export default mongoose.model('VisitCount', visitCountSchema);
+/*
+
+import mongoose from 'mongoose';
+schema = mongoose.Schema;
+
+visitCountSchema = new schema({count})
+
+
+*/

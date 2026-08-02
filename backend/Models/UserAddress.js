@@ -30,3 +30,17 @@ const UserAddress = new Schema({
 })
 
 export default mongoose.model("userAddress", UserAddress)
+/*
+import mongoose from "mongoose";
+
+schema = mongoose.Schema;
+
+userAddress = new schema({address,city,pincode,phoneNumber,country,state})
+
+
+
+
+
+
+
+*/
