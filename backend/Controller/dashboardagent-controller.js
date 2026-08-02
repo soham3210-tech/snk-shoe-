@@ -11,6 +11,18 @@ export const getAgents = async (req, res, next) => {
       next(error);
     }
   };
+  /*
+  export const getAgents = async (req, res, next) => {}
+    try
+       find all agents from Agents model
+
+       if no agents found, return 404 with message "Managers not found"
+
+       response with agents
+    catch
+       return error to next middleware
+  
+  */
   
   export const signupAgent = async (req, res, next) => {
     const { agentName, agentPassword } = req.body;
@@ -28,7 +40,26 @@ export const getAgents = async (req, res, next) => {
       next(error);
     }
   };
+  /*
+   export const signupAgent = async (req, res, next) => {}
+    try
+       find existing agent by agentName from Agents model
+
+       if existing agent found, return 409 with message "Agent already exists"
+
+       create new agent with agentName and agentPassword
+
+       save new agent to database
+
+       response with new agent and status 201
+    catch
+       return error to next middleware
   
+  
+  
+  
+  
+  */
   export const loginAgent = async (req, res, next) => {
     const { agentName, agentPassword } = req.body;
     try {
@@ -46,3 +77,17 @@ export const getAgents = async (req, res, next) => {
       next(error);
     }
   };
+  /*
+  export const loginAgent = async (req, res, next) => {}
+    try
+       find agent by agentName from Agents model
+
+       if agent not found, return 404 with message "Agent not found"
+
+       if agentPassword does not match, return 401 with message "Authentication failed"
+
+       response with agent and status 200
+    catch
+       return error to next middleware
+  
+  */

@@ -24,6 +24,29 @@ export const addUserAddress = async (req, res, next) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+/*
+export const getUserAddresses = async (req, res, next) => {
+  try {
+        store parameter in userid
+
+        store userdata in userData from User.findById(userid)
+
+        if userData is not found, return 404 with message "User not found"
+
+        store userAddresses in UserAddress.find where _id is in userData.addresses
+
+        return 200 with userAddresses
+
+  } catch (error) {
+    return 500 with message "Server error"
+  }
+
+
+
+
+
+
+*/
 
 export const updateUserAddress = async (req, res, next) => {
   try {
@@ -50,6 +73,39 @@ export const updateUserAddress = async (req, res, next) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+
+
+/*
+
+
+export const deleteAddress = async (req, res) => {
+  try {
+    store parameter in userid and addressid
+
+    store userdata in user from User.findById(userid)
+
+    if user is not found, return 404 with message "User not found"
+
+    find the index of the address in the user's addresses where address._id.toString() === addressid
+
+    if addressIndex is -1, return 404 with message "Address not found in the user's addresses"
+
+    remove the address from the addresses array using splice
+
+    save the user
+
+    return json with message "Address removed successfully"
+  } catch (error) {
+    return 500 with message "Unable to remove the address"
+  }
+};  
+
+
+
+
+
+*/
 
 export const deleteAddress = async (req, res) => {
   try {
@@ -79,6 +135,28 @@ export const deleteAddress = async (req, res) => {
     res.status(500).json({ error: "Unable to remove the address" });
   }
 };
+/*
+export const deleteAddress = async (req, res) => {
+    try
+        store parameter in userid and addressid
+
+        store userdata in user from User.findById(userid)   
+
+      if user is not found, return 404 with message "User not found"  
+
+      find the index of the address in the user's addresses where address._id.toString() === addressid
+
+      if addressIndex is -1, return 404 with message "Address not found in the user's addresses"
+
+      remove the address from the addresses array using splice
+
+      save the user
+
+      return json with message "Address removed successfully"
+    catch error
+        return 500 with message "Unable to remove the address"  
+
+*/
 
 
 
@@ -102,3 +180,27 @@ export const getUserAddresses = async (req, res, next) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+/*
+export const getUserAddresses = async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+
+    const userData = await User.findById(userId);
+
+    if (!userData) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const userAddresses = await UserAddress.find({
+      _id: { $in: userData.addresses },
+    });
+
+    res.status(200).json(userAddresses);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+
+
+*/

@@ -12,7 +12,23 @@ export const getVisitCount = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+/*
+export const getVisitCount = async (req, res) => {}
+    try
+       find visitCount from VisitCount model
 
+       if visitCount not found, create new VisitCount instance
+
+       response with visitCount.count
+    catch
+       return 500 with message err.message
+
+
+
+
+
+
+*/
 export const incrementVisitCount = async (req, res) => {
   try {
     let visitCount = await VisitCount.findOne();
@@ -26,3 +42,22 @@ export const incrementVisitCount = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+/*
+export const incrementVisitCount = async (req, res) => {}
+    try
+       find visitCount from VisitCount model
+
+       if visitCount not found, create new VisitCount instance
+
+       increment visitCount.count by 1
+
+       save updated visitCount
+
+       response with updated visitCount.count
+    catch
+       return 500 with message err.message
+
+
+
+
+*/
