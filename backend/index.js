@@ -26,3 +26,30 @@ const startServer = async () => {
 };
 
 startServer();
+/*
+
+
+import mongoose,dotenv,app
+
+dotenv.config()
+
+const port
+const mongouri
+
+if !mongouri
+  console.error
+  process.exit
+
+startServer = async
+
+try
+  await mongoose.connect(mongouri)
+
+  app.listen(port)
+    console.log
+catch error
+  console.error
+  process.exit
+
+
+*/
