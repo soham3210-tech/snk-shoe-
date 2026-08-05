@@ -58,7 +58,7 @@
 
 .userProfile-subheading {
   font-size: 2rem;
-  color: var(--color-6);
+  color: var(--color-1);
 
   margin: 10px;
 
@@ -67,13 +67,12 @@
 
 .userProfile-paragraph {
   font-size: 1.4rem;
-  color: var(--color-6);
   font-family: var(--font-rubik);
 
   line-height: 1.2;
 
   position: relative;
-  color: var(--color-6);
+  color: var(--color-1);
   margin: 10px;
 
 }
@@ -90,7 +89,7 @@
   border: none;
   cursor: pointer;
   background-color: var(--color-6);
-  color: #fff;
+  color: #0c0c0c;
   border-radius: 5px;
   font-family: var(--font-rubik);
 }

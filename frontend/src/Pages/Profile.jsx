@@ -17,8 +17,7 @@ import "../CSS/Profile.css";
 import Reg from "../assets/hero.png";
 
 const Profile = () => {
-    // a simple usestate to handle loading state. initially set to off.
-    const [isLoading, setLoading] = useState(false)
+    const [isLoading, setLoading] = useState(false);    // a simple usestate to handle loading state. initially set to off.
     const [isLogin, setIsLogin] = useState(true);
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [error, setError] = useState(null);
@@ -183,7 +182,7 @@ const Profile = () => {
         }
     };
 
-    const handleFileChange = async (e) => {
+    const handleFileChange = async (e) => {//Yes, exactly. This function is usually connected to an image input field.
         const fileInput = e.target.files[0];
         if (fileInput) {
             const base64 = await convertToBase64(fileInput);
